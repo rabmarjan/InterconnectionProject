@@ -11,7 +11,7 @@ How to run the project
 4. python manage.py runserver_plus localhost:8000 (For development)
 5. gunicorn InterconnectionContact.wsgi:application -w 4 -b localhost:8000 (For production with optional flag)**
 6. curl -H "Content-Type: application/json" -X POST -d '{"first_name":"xyz","last_name":"xyz"}' http://localhost:8000/api/v1/contact/
-7. # Or use any rest client such as Advanced Rest Client for getting data from rest url
+7.Use any rest client such as Advanced Rest Client for getting data from rest url
 
 ** For Production you can use gunicorn or other wsgi compatible server
 
