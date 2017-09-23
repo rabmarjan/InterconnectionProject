@@ -14,7 +14,7 @@ class ContactView(APIView):
     """
     Get or post a contact instance.
     """
-    def get(self, request: Any) -> Dict:
+    def get(self, request: Any) -> Response:
         """
         :param request:
         :return:
@@ -23,7 +23,7 @@ class ContactView(APIView):
         serializer = ContactSerializer(contact, many=True)
         return Response(serializer.data)
 
-    def post(self, request: Any) -> Dict:
+    def post(self, request: Any) -> Response:
         """
         :param request:
         :return:
@@ -49,7 +49,7 @@ class ContactDetail(APIView):
         except Contact.DoesNotExist:
             raise Http404
 
-    def put(self, request: Any, contact_id: Any) -> Dict:
+    def put(self, request: Any, contact_id: Any) -> Response:
         """
         :param request:
         :param id:
@@ -62,7 +62,7 @@ class ContactDetail(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request: Any, contact_id: Any) -> Dict:
+    def delete(self, request: Any, contact_id: Any) -> Response:
         """
         :param request:
         :param id:
