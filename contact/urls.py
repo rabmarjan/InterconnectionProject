@@ -4,5 +4,5 @@ from contact.views import ContactView, ContactDetail
 
 urlpatterns = [
     path('api/v1/contact/', ContactView.as_view()),
-    path('api/v1/contact/<int:id>', ContactDetail.as_view()),
+    path('api/v1/contact/<int:contact_id>', ContactDetail.as_view()),
 ]
