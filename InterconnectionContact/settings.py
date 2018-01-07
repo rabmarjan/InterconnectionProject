@@ -24,7 +24,7 @@ SECRET_KEY = 'z)xel1ck7bu+q^8@k_)5_=vjcri0-b-@083pnjnz+a_ahb9(^m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'rest_framework',
     'contact',
 ]
 
@@ -57,15 +58,23 @@ APPEND_SLASH=False
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'HOST': 'localhost',  # Host name
+#        'NAME': 'contact_db',  # Database name
+#        'ENGINE': 'django.db.backends.postgresql',  # postgres driver name
+#        'USER': 'postgres',
+#        'PASSWORD': '21198321mm',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'HOST': 'localhost',  # Host name
-        'NAME': 'contact_db',  # Database name
-        'ENGINE': 'django.db.backends.postgresql',  # postgres driver name
-        'USER': 'postgres',
-        'PASSWORD': '21198321mm',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
