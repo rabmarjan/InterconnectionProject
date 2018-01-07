@@ -48,7 +48,16 @@ class ContactDetail(APIView):
             return Contact.objects.get(contact_id=contact_id)
         except Contact.DoesNotExist:
             raise Http404
-
+            
+    def get(self, request: Any, contact_id, format=None) -> Response:
+        """
+        :param id:
+        :return:
+        """
+        contact = self.get_object(contact_id)
+        serializer = ContactSerializer(contact)
+        return Response(serializer.data)
+            
     def put(self, request: Any, contact_id: Any) -> Response:
         """
         :param request:
