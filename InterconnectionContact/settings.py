@@ -64,7 +64,7 @@ APPEND_SLASH=False
 #        'NAME': 'contact_db',  # Database name
 #        'ENGINE': 'django.db.backends.postgresql',  # postgres driver name
 #        'USER': 'postgres',
-#        'PASSWORD': '21198321mm',
+#        'PASSWORD': 'password',
 #    }
 #}
 
