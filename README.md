@@ -5,7 +5,7 @@ How to run the project
 
 ** Use virtual environment for isolated local development
 
-1. pip install -r requirement.txt
+1. pip install -r requirements.txt
 2. python manage.py makemigrations contact (Before running this command set database connection properly in settings.py file)
 3. python manage.py migrate
 4. python manage.py runserver_plus localhost:8000 (For development)
