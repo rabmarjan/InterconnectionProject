@@ -2,7 +2,7 @@ Django
 django-cors-headers==2.0.0
 django-extensions==1.7.5
 django-redis==4.7.0
-djangorestframework==3.5.3
+djangorestframework
 djangorestframework-expiring-authtoken==0.1.4
 psycopg2==2.6.2
 pytz==2016.10
