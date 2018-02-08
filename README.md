@@ -3,9 +3,12 @@
 
 How to run the project
 
-** Use virtual environment for isolated local development
+** Use virtual environment for isolated local development or use pipenv 
 
-1. pip install -r requirements.txt
+1. sudo pip install pipenv   # For Python version 2.7
+2. sudo pip3 install pipenv  # For Python version 3.6
+3. pipenv --python 3.6
+4. 
 2. python manage.py makemigrations contact (Before running this command set database connection properly in settings.py file)
 3. python manage.py migrate
 4. python manage.py runserver localhost:8000 (For development)
