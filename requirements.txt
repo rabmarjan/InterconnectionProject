@@ -1,14 +1,5 @@
 Django
-django-cors-headers==2.0.0
-django-extensions==1.7.5
-django-redis==4.7.0
+django-cors-headers
+django-extensions
 djangorestframework
-djangorestframework-expiring-authtoken==0.1.4
-psycopg2==2.6.2
-pytz==2016.10
-PyYAML==3.12
-redis==2.10.5
-reportlab==3.3.0
-requests==2.12.4
-Werkzeug==0.11.15
-gunicorn-19.6.0
+gunicorn
