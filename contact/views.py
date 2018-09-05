@@ -8,13 +8,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from contact.models import Contact
 from contact.serializers import ContactSerializer
+from django.http import HttpRequest, HttpResponse
 
 
 class ContactView(APIView):
     """
     Get or post a contact instance.
     """
-    def get(self, request: Any) -> Response:
+    def get(self, request: HttpRequest) -> Response:
         """
         :param request:
         :return:
@@ -23,7 +24,7 @@ class ContactView(APIView):
         serializer = ContactSerializer(contact, many=True)
         return Response(serializer.data)
 
-    def post(self, request: Any) -> Response:
+    def post(self, request: HttpRequest) -> Response:
         """
         :param request:
         :return:
@@ -39,7 +40,7 @@ class ContactDetail(APIView):
     """
      Update or delete a contact instance.
     """
-    def get_object(self, contact_id: Any) -> Any:
+    def get_object(self, contact_id: int) -> Response:
         """
         :param id:
         :return:
@@ -49,7 +50,7 @@ class ContactDetail(APIView):
         except Contact.DoesNotExist:
             raise Http404
             
-    def get(self, request: Any, contact_id, format=None) -> Response:
+    def get(self, request: HttpRequest, contact_id: int, format=None) -> Response:
         """
         :param id:
         :return:
@@ -58,7 +59,7 @@ class ContactDetail(APIView):
         serializer = ContactSerializer(contact)
         return Response(serializer.data)
             
-    def put(self, request: Any, contact_id: Any) -> Response:
+    def put(self, request: HttpRequest, contact_id: int) -> Response:
         """
         :param request:
         :param id:
@@ -71,7 +72,7 @@ class ContactDetail(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request: Any, contact_id: Any) -> Response:
+    def delete(self, request: HttpRequest, contact_id: int) -> Response:
         """
         :param request:
         :param id:
